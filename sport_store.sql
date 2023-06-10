@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th6 03, 2023 lúc 09:18 AM
+-- Thời gian đã tạo: Th6 10, 2023 lúc 09:34 AM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -242,20 +242,21 @@ CREATE TABLE `orders` (
 
 INSERT INTO `orders` (`id`, `user_id`, `address`, `phone`, `status`, `payment_method`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, 12, '189 Trần Hưng Đạo, Mỹ Bình, Long Xuyên, An Giang', '0855665509', 'done', 'cod', '2023-05-31 14:06:51', '2023-06-02 13:18:22', NULL),
-(3, 14, 'Hồ Chí Minh', '0913533110', 'done', 'cod', '2023-06-02 13:13:24', '2023-06-02 13:18:04', NULL),
+(3, NULL, 'Hồ Chí Minh', '0913533110', 'done', 'cod', '2023-06-02 13:13:24', '2023-06-02 13:18:04', NULL),
 (4, 16, 'Hồ Chí Minh', '+84855665509', 'done', 'cod', '2023-06-02 13:16:51', '2023-06-02 13:17:38', NULL),
 (5, 16, 'Hồ Chí Minh', '+84855665509', 'processing', 'cod', '2023-06-02 13:20:34', '2023-06-02 13:20:37', NULL),
-(6, 14, '189 Trần Hưng Đạo, Mỹ Bình, Long Xuyên, An Giang', '0855665509', 'processing', 'cod', '2023-06-02 15:30:49', '2023-06-02 15:30:53', NULL),
-(7, 19, '189 Trần Hưng Đạo, Mỹ Bình, Long Xuyên, An Giang', '0855665509', 'processing', 'cod', '2023-06-02 15:45:48', '2023-06-02 15:45:51', NULL),
-(8, 19, 'Hồ Chí Minh', '0913533110', 'done', 'cod', '2023-06-02 15:49:53', '2023-06-02 15:59:55', NULL),
-(9, 19, '189 Trần Hưng Đạo, Mỹ Bình, Long Xuyên, An Giang', '0855665509', 'processing', 'vnpay_atm', '2023-06-02 17:06:49', '2023-06-02 17:18:06', NULL),
+(6, NULL, '189 Trần Hưng Đạo, Mỹ Bình, Long Xuyên, An Giang', '0855665509', 'processing', 'cod', '2023-06-02 15:30:49', '2023-06-02 15:30:53', NULL),
+(7, NULL, '189 Trần Hưng Đạo, Mỹ Bình, Long Xuyên, An Giang', '0855665509', 'processing', 'cod', '2023-06-02 15:45:48', '2023-06-02 15:45:51', NULL),
+(8, NULL, 'Hồ Chí Minh', '0913533110', 'done', 'cod', '2023-06-02 15:49:53', '2023-06-02 15:59:55', NULL),
+(9, NULL, '189 Trần Hưng Đạo, Mỹ Bình, Long Xuyên, An Giang', '0855665509', 'processing', 'vnpay_atm', '2023-06-02 17:06:49', '2023-06-02 17:18:06', NULL),
 (10, 20, '189 Trần Hưng Đạo, Mỹ Bình, Long Xuyên, An Giang', '0855665509', 'processing', 'cod', '2023-06-03 05:19:58', '2023-06-03 05:20:02', NULL),
 (11, 16, 'Hồ Chí Minh', '+84855665509', 'processing', 'cod', '2023-06-03 06:18:55', '2023-06-03 06:18:58', NULL),
 (12, 21, '189 Trần Hưng Đạo, Mỹ Bình, Long Xuyên, An Giang', '0855665509', 'done', 'vnpay_atm', '2023-06-03 06:24:32', '2023-06-03 06:44:59', NULL),
 (13, 16, '189 Trần Hưng Đạo, Mỹ Bình, Long Xuyên, An Giang', '0855665509', 'processing', 'cod', '2023-06-03 06:29:10', '2023-06-03 06:29:13', NULL),
 (14, 16, '189 Trần Hưng Đạo, Mỹ Bình, Long Xuyên, An Giang', '0855665509', 'processing', 'cod', '2023-06-03 06:29:13', '2023-06-03 06:29:18', NULL),
 (35, 16, 'Trung Quốc', '123456789', 'processing', 'cod', '2023-06-03 06:38:47', '2023-06-03 06:38:50', NULL),
-(36, 16, '189 Trần Hưng Đạo, Mỹ Bình, Long Xuyên, An Giang', '0855665509', 'done', 'cod', '2023-06-03 06:44:21', '2023-06-03 06:44:47', NULL);
+(36, 16, '189 Trần Hưng Đạo, Mỹ Bình, Long Xuyên, An Giang', '0855665509', 'done', 'cod', '2023-06-03 06:44:21', '2023-06-03 06:44:47', NULL),
+(37, NULL, '189 Trần Hưng Đạo, Mỹ Bình, Long Xuyên, An Giang', '0855665509', 'pending', 'vnpay_atm', '2023-06-10 06:58:45', '2023-06-10 06:58:45', NULL);
 
 -- --------------------------------------------------------
 
@@ -306,7 +307,8 @@ INSERT INTO `order_items` (`id`, `order_id`, `product_id`, `color_id`, `size_id`
 (22, 12, 18, 7, 7, 3, 2042108, 'Mini Silver Mesh Watch', '2023-06-03 06:24:32', '2023-06-03 06:24:32', NULL),
 (23, 13, 18, 1, 7, 1, 2042108, 'Mini Silver Mesh Watch', '2023-06-03 06:29:10', '2023-06-03 06:29:10', NULL),
 (24, 35, 18, 7, 7, 3, 2042108, 'Mini Silver Mesh Watch', '2023-06-03 06:38:47', '2023-06-03 06:38:47', NULL),
-(25, 36, 18, 1, 7, 1, 2042108, 'Mini Silver Mesh Watch', '2023-06-03 06:44:21', '2023-06-03 06:44:21', NULL);
+(25, 36, 18, 1, 7, 1, 2042108, 'Mini Silver Mesh Watch', '2023-06-03 06:44:21', '2023-06-03 06:44:21', NULL),
+(26, 37, 3, 3, 4, 2, 1385000, 'Lightweight Jacket', '2023-06-10 06:58:45', '2023-06-10 06:58:45', NULL);
 
 -- --------------------------------------------------------
 
@@ -349,7 +351,8 @@ INSERT INTO `order_payment_methods` (`id`, `order_id`, `payment_provider`, `tota
 (33, NULL, 'cod', 0, 'done', '2023-06-03 06:33:19', '2023-06-03 06:33:23', NULL),
 (34, NULL, 'cod', 0, 'done', '2023-06-03 06:34:12', '2023-06-03 06:34:15', NULL),
 (35, 35, 'cod', 6126324, 'done', '2023-06-03 06:38:47', '2023-06-03 06:38:50', NULL),
-(36, 36, 'cod', 2042108, 'done', '2023-06-03 06:44:21', '2023-06-03 06:44:25', NULL);
+(36, 36, 'cod', 2042108, 'done', '2023-06-03 06:44:21', '2023-06-03 06:44:25', NULL),
+(37, 37, 'vnpay_atm', 2770000, 'pending', '2023-06-10 06:58:45', '2023-06-10 06:58:45', NULL);
 
 -- --------------------------------------------------------
 
@@ -782,12 +785,11 @@ INSERT INTO `users` (`id`, `name`, `phone`, `address`, `email`, `status`, `role`
 (9, 'Mr. Emanuel Farrell Sr.', '+1 (718) 746-4293', '75856 Little River\nLake Martin, FL 20335-7531', 'hrogahn@example.net', 1, 1, '2023-05-15 07:44:56', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, 'gRRoedu91o', '2023-05-15 07:44:56', '2023-05-15 07:44:56'),
 (10, 'Prof. Susana Johnston', '1-424-759-5932', '496 Alba Camp\nBayerchester, NJ 17686', 'bechtelar.viva@example.com', 1, 0, '2023-05-15 07:44:56', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', NULL, 'VHT2hnpHFh', '2023-05-15 07:44:56', '2023-05-15 07:44:56'),
 (12, 'Nguyễn Văn A', '0855665509', 'Hồ Chí Minh', 'nguyenvana@gmail.com', 0, 1, NULL, '$2y$10$NjoG3gMvNUmWnQd.R28mZOgn5nokOcjniOK5kRTjPl6IBO0kUAANu', NULL, '6JMO74Kh554gJgaDXQXT4MfjQAzCwwF8T2qIQM8Rz29NiAWKTCSI0lRbIrMr', '2023-05-19 03:49:03', '2023-06-03 04:50:17'),
-(14, 'Nguyễn Trung Hậu', '0855665509', 'Hồ Chí Minh', '51900067@student.tdtu.edu.vn', 1, 0, NULL, '$2y$10$HDNxcK8NkHvEadeLLjvHDO7JV6YHvea.snW5JImaUNM/0xCZxAuC2', NULL, NULL, '2023-05-28 02:08:14', '2023-06-03 05:36:29'),
 (15, 'Tô Tấn Bửu', '123456', NULL, 'acnast9@gmail.com', 1, 0, NULL, '$2y$10$tVU/a30qZ4UdLU6v.4ZIJOuiOH4/pQatIO.EHYlrTE0VHvNqXPFbC', NULL, NULL, '2023-05-29 10:24:13', '2023-05-29 11:51:55'),
-(16, 'Trần Văn B', '0855665509', 'Việt Nam', 'tranvanb@gmail.com', 1, 1, NULL, '$2y$10$NjoG3gMvNUmWnQd.R28mZOgn5nokOcjniOK5kRTjPl6IBO0kUAANu', NULL, NULL, '2023-05-31 08:18:28', '2023-06-03 06:44:21'),
-(19, 'Hậu Trung', '0855665509', NULL, 'trunghau280301@gmail.com', 1, 0, NULL, '$2y$10$kfbZAcOXCLZ2wXubxJ46X.JAlGnljxQQNw5gQO1JXBR/PgVsw61sW', NULL, NULL, '2023-06-02 08:09:52', '2023-06-03 06:52:07'),
+(16, 'Trần Văn B', '0855665509', 'Việt Nam', 'tranvanb@gmail.com', 1, 0, NULL, '$2y$10$NjoG3gMvNUmWnQd.R28mZOgn5nokOcjniOK5kRTjPl6IBO0kUAANu', NULL, NULL, '2023-05-31 08:18:28', '2023-06-03 06:44:21'),
 (20, 'Han', '0855665509', NULL, 'giahanledao@gmail.com', 1, 0, NULL, '$2y$10$UHaWoSlS3npXcVoe.t/2AOztakwPMvheJPMYPmcaR7JVLb/UkByTC', NULL, NULL, '2023-06-03 05:06:07', '2023-06-03 05:19:58'),
-(21, 'Luân', '0855665509', '1123457 HCM', 'vuluan5091@gmail.com', 0, 0, NULL, '$2y$10$sTkYOreFPunL1ep7w0048OQAPE1ELyVJfQLcoExPuVspIuDlpPACe', NULL, 'UwOIsTnDZVmEmhCfZAgittvOcqS4QOwA81yfCO05zRyRsMoRQ34ahLpRLuuh', '2023-06-03 05:49:36', '2023-06-03 06:51:28');
+(21, 'Luân', '0855665509', '1123457 HCM', 'vuluan5091@gmail.com', 0, 0, NULL, '$2y$10$sTkYOreFPunL1ep7w0048OQAPE1ELyVJfQLcoExPuVspIuDlpPACe', NULL, 'UwOIsTnDZVmEmhCfZAgittvOcqS4QOwA81yfCO05zRyRsMoRQ34ahLpRLuuh', '2023-06-03 05:49:36', '2023-06-03 06:51:28'),
+(22, 'Admin', '123456789', 'Hồ Chí Minh', 'admin@gmail.com', 1, 1, NULL, '$2y$10$UmUd85xo.SzajOgvfyLYOuxZyEsedsndkHwxn23l0djsyHVEtJ7q2', NULL, NULL, '2023-06-10 07:29:41', '2023-06-10 07:29:41');
 
 -- --------------------------------------------------------
 
@@ -834,14 +836,10 @@ CREATE TABLE `wishlists` (
 --
 
 INSERT INTO `wishlists` (`id`, `user_id`, `product_id`, `created_at`, `updated_at`) VALUES
-(18, 19, 18, '2023-06-02 11:18:35', '2023-06-02 11:18:35'),
 (19, 16, 14, '2023-06-02 11:27:28', '2023-06-02 11:27:28'),
 (20, 16, 12, '2023-06-02 11:28:24', '2023-06-02 11:28:24'),
 (21, 16, 18, '2023-06-02 11:29:05', '2023-06-02 11:29:05'),
 (22, 12, 12, '2023-06-02 11:29:37', '2023-06-02 11:29:37'),
-(23, 14, 14, '2023-06-02 13:12:40', '2023-06-02 13:12:40'),
-(24, 14, 3, '2023-06-02 13:12:51', '2023-06-02 13:12:51'),
-(25, 14, 12, '2023-06-02 15:35:35', '2023-06-02 15:35:35'),
 (26, 20, 17, '2023-06-03 05:19:15', '2023-06-03 05:19:15'),
 (27, 20, 13, '2023-06-03 05:19:29', '2023-06-03 05:19:29'),
 (28, 20, 11, '2023-06-03 05:19:37', '2023-06-03 05:19:37');
@@ -1059,19 +1057,19 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT cho bảng `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT cho bảng `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT cho bảng `order_payment_methods`
 --
 ALTER TABLE `order_payment_methods`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT cho bảng `personal_access_tokens`
@@ -1131,7 +1129,7 @@ ALTER TABLE `sizes`
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT cho bảng `web_information`
